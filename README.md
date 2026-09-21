@@ -49,10 +49,3 @@ An e-commerce company has a list of N product prices. Write a program to:
 
 ---
 
-## Program 6 — Product Price Sorting Using Different Techniques
-
-An e-commerce company has a list of N product prices. Write a program to sort the prices in ascending order using the following three sorting techniques:
-
-1. Bubble Sort.
-2. Selection Sort.
-3. Insertion Sort.
