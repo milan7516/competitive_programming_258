@@ -1,24 +1,23 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
     int N;
 
-    printf("Enter number of hours: ");
-    scanf("%d", &N);
+    cout << "Enter number of hours: ";
+    cin >> N;
 
     if (N <= 0) {
-        printf("Number of hours must be greater than 0.\n");
+        cout << "Number of hours must be greater than 0." << endl;
     }
     else {
-        int patients[N];
+        int patients[100];
 
-        // Input patients for each hour
         for (int i = 0; i < N; i++) {
-            printf("Enter patients in hour %d: ", i + 1);
-            scanf("%d", &patients[i]);
+            cout << "Enter patients in hour " << i + 1 << ": ";
+            cin >> patients[i];
         }
 
-        // Find maximum patients and hour
         int max_patients = patients[0];
         int max_hour = 0;
 
@@ -29,7 +28,6 @@ int main() {
             }
         }
 
-        // Find minimum patients
         int min_patients = patients[0];
 
         for (int i = 1; i < N; i++) {
@@ -38,10 +36,8 @@ int main() {
             }
         }
 
-        // Peak hour
         int peak_hour = max_hour;
 
-        // Calculate average
         int sum = 0;
 
         for (int i = 0; i < N; i++) {
@@ -49,8 +45,6 @@ int main() {
         }
 
         float average = (float)sum / N;
-
-        // Count hours above average
         int above_average_hours = 0;
 
         for (int i = 0; i < N; i++) {
@@ -59,18 +53,17 @@ int main() {
             }
         }
 
-        // Output
-        printf("Maximum number of patients: %d (Hour %d)\n",
-               max_patients, max_hour + 1);
+        cout << "Maximum number of patients: "
+             << max_patients << " (Hour " << max_hour + 1 << ")" << endl;
 
-        printf("Minimum number of patients: %d\n",
-               min_patients);
+        cout << "Minimum number of patients: "
+             << min_patients << endl;
 
-        printf("Peak hour: Hour %d\n",
-               peak_hour + 1);
+        cout << "Peak hour: Hour "
+             << peak_hour + 1 << endl;
 
-        printf("Number of hours above average: %d\n",
-               above_average_hours);
+        cout << "Number of hours above average: "
+             << above_average_hours << endl;
     }
 
     return 0;

@@ -1,16 +1,17 @@
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
 
 int main() {
-    char code[100];
+    string code;
     int is_valid = 1;
 
-    printf("Enter book code: ");
-    scanf("%s", code);
+    cout << "Enter book code: ";
+    cin >> code;
 
     // Check length
-    if (strlen(code) != 12) {
+    if (code.length() != 12) {
         is_valid = 0;
     }
     else {
@@ -47,10 +48,10 @@ int main() {
     }
 
     if (is_valid) {
-        printf("'%s' is a valid book code.\n", code);
+        cout << "'" << code << "' is a valid book code." << endl;
     }
     else {
-        printf("'%s' is an invalid book code.\n", code);
+        cout << "'" << code << "' is an invalid book code." << endl;
     }
 
     return 0;

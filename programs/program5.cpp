@@ -1,24 +1,23 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
     int N;
 
-    printf("Enter number of products: ");
-    scanf("%d", &N);
+    cout << "Enter number of products: ";
+    cin >> N;
 
     if (N <= 0) {
-        printf("Number of products must be greater than 0.\n");
+        cout << "Number of products must be greater than 0." << endl;
     }
     else {
-        float prices[N];
+        float prices[100];
 
-        // Input prices
         for (int i = 0; i < N; i++) {
-            printf("Enter price for product %d: ", i + 1);
-            scanf("%f", &prices[i]);
+            cout << "Enter price for product " << i + 1 << ": ";
+            cin >> prices[i];
         }
 
-        // Sort prices in ascending order
         for (int i = 0; i < N - 1; i++) {
             for (int j = 0; j < N - i - 1; j++) {
                 if (prices[j] > prices[j + 1]) {
@@ -29,11 +28,10 @@ int main() {
             }
         }
 
-        // Display sorted prices
-        printf("\nPrices in ascending order:\n");
+        cout << "\nPrices in ascending order:" << endl;
 
         for (int i = 0; i < N; i++) {
-            printf("%.2f\n", prices[i]);
+            cout << prices[i] << endl;
         }
     }
 
