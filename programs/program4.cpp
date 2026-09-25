@@ -20,7 +20,6 @@ int main() {
             }
         }
 
-        // Check first dash
         if (code[3] != '-') {
             is_valid = 0;
         }
