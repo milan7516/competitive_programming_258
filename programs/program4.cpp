@@ -10,12 +10,10 @@ int main() {
     cout << "Enter book code: ";
     cin >> code;
 
-    // Check length
     if (code.length() != 12) {
         is_valid = 0;
     }
     else {
-        // Check first 3 characters: uppercase alphabets
         for (int i = 0; i < 3; i++) {
             if (!isalpha(code[i]) || !isupper(code[i])) {
                 is_valid = 0;
@@ -27,19 +25,17 @@ int main() {
             is_valid = 0;
         }
 
-        // Check characters 4 to 7: digits
+
         for (int i = 4; i < 8; i++) {
             if (!isdigit(code[i])) {
                 is_valid = 0;
             }
         }
 
-        // Check second dash
         if (code[8] != '-') {
             is_valid = 0;
         }
 
-        // Check characters 9 to 11: digits
         for (int i = 9; i < 12; i++) {
             if (!isdigit(code[i])) {
                 is_valid = 0;
