@@ -49,3 +49,15 @@ An e-commerce company has a list of N product prices. Write a program to:
 
 ---
 
+## program 6- Binary Tree
+
+Write a program in cpp to find the height of a binary tree.
+
+---
+
+## program 7-Binary Tree
+
+write a program in cpp to find total no. of nodes,no. of internal nodes and no. of leaf nodes in a binary tree.
+
+---
+
