@@ -8,7 +8,7 @@ int main() {
 
     cout << "Enter number of students: ";
     cin >> N;
-    cin.ignore();  // Remove newline left by cin
+    cin.ignore();  
 
     if (N <= 0) {
         cout << "Number of students must be greater than 0." << endl;
@@ -17,7 +17,6 @@ int main() {
 
     string names[100];
 
-    // Input student names
     for (int i = 0; i < N; i++) {
         cout << "Enter name of student " << i + 1 << ": ";
         getline(cin, names[i]);
@@ -28,7 +27,6 @@ int main() {
     cout << "Enter name to search: ";
     getline(cin, search_name);
 
-    // Case-sensitive search
     int case_sensitive_found = 0;
     int case_sensitive_pos = -1;
 
@@ -40,7 +38,6 @@ int main() {
         }
     }
 
-    // Case-insensitive search
     int case_insensitive_found = 0;
     int case_insensitive_pos = -1;
 
@@ -48,7 +45,6 @@ int main() {
         string name1 = names[i];
         string name2 = search_name;
 
-        // Convert both names to lowercase
         for (int j = 0; j < name1.length(); j++) {
             name1[j] = tolower(name1[j]);
         }
@@ -64,7 +60,6 @@ int main() {
         }
     }
 
-    // Output
     cout << "\nCase-Sensitive Search:" << endl;
 
     if (case_sensitive_found) {
