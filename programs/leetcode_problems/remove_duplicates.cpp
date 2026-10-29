@@ -1,33 +1,26 @@
-#include <stdio.h>
+
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+using namespace std;
 
 int main() {
-    int nums[] = {1, 1, 2, 2, 3};
-    int n = sizeof(nums) / sizeof(nums[0]);
+    vector<int> nums = {4, 2, 4, 1, 2, 5, 1};
+    unordered_set<int> seen;
 
-    int unique[100];
-    int count = 0;
+    int k = 0;
 
-    for (int i = 0; i < n; i++) {
-        int found = 0;
-
-        for (int j = 0; j < count; j++) {
-            if (nums[i] == unique[j]) {
-                found = 1;
-                break;
-            }
-        }
-
-        if (!found) {
-            unique[count] = nums[i];
-            count++;
+    for (int i = 0; i < nums.size(); i++) {
+        if (seen.insert(nums[i]).second) {
+            nums[k] = nums[i];
+            k++;
         }
     }
 
-    for (int i = 0; i < count; i++) {
-        printf("%d ", unique[i]);
+    for (int i = 0; i < k; i++) {
+        cout << nums[i] << " ";
     }
 
-    printf("\nNumber of unique elements: %d\n", count);
-
+    cout << endl;
     return 0;
 }
